@@ -91,7 +91,7 @@
 .calcblock-result-title{
   font-size: 16px;
   margin-bottom: 15px; 
-  font-weight: 900;
+  font-weight: 600;
 }
 .calcblock-result-res-item{
   display: flex;
@@ -109,7 +109,7 @@
   line-height: 30px;
   background: #F9CBAB;
   margin-left: auto;
-  font-weight: 900;
+  font-weight: 600;
 }
 .calcblock-result-res{
   margin-left: auto;
