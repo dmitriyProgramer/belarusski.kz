@@ -101,6 +101,7 @@
 .calcblock-result-lab{
   font-size: 14px;
   padding-right: 15px;
+  font-weight: 600;
 }
 .calcblock-result-val{
   width: 75px;
