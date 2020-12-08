@@ -41,7 +41,6 @@
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  cursor: pointer;
 }
 .calcblock-num.checked{
   background: #e30016;
@@ -131,7 +130,6 @@
   justify-content: center;
   font-size: 14px;
   position: absolute;
-  cursor: pointer;
 }
 .calcblock-bulit-1{
   top: 145px;
