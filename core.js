@@ -28,7 +28,7 @@ calc = function() {
 	a1 = $($('.calcblock-row')[0]).find('.calcblock-input').val()*1;
 	a2 = $($('.calcblock-row')[1]).find('.calcblock-input').val()*1;
 	a3 = $($('.calcblock-row')[2]).find('.calcblock-input').val()*1;
-	if( a1 != '' && a2 != ){
+	if( a1 != '' && a2 != '' ){
 		numeric = '?';
 		letter = '?';
 		for( i in o ){
