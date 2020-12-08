@@ -45,7 +45,7 @@ calc = function() {
 		    }
 		}
 		$($('.calcblock-result-res-item')[0]).find('.calcblock-result-val').text(numeric+'-'+letter);
-	}
+	}else $($('.calcblock-result-res-item')[0]).find('.calcblock-result-val').text('');
 	if( a3 != '' ){
 		CIS = EU = '?';
 		for( i in at[0] ){
@@ -54,5 +54,8 @@ calc = function() {
 		}
 		$($('.calcblock-result-res-item')[1]).find('.calcblock-result-val').text(CIS);
 		$($('.calcblock-result-res-item')[2]).find('.calcblock-result-val').text(EU);
+	}else{
+		$($('.calcblock-result-res-item')[1]).find('.calcblock-result-val').text('');
+		$($('.calcblock-result-res-item')[2]).find('.calcblock-result-val').text('');
 	}
 }
