@@ -16,7 +16,6 @@ $(document).ready(function() {
 	}, 1000);
 });
 
-
 newSku = function(){
 	$('.ks-widget').remove(); $('#credit').remove(); $('#KS-Widget').remove();
 	setTimeout(function(){
