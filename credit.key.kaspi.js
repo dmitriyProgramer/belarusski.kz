@@ -60,3 +60,6 @@ newSku = function(){
 		}
 	}, 100);
 }
+
+
+
