@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function() { console.log('credit');
 	delInt1 = setInterval(function(){
 		sku = $(".t-store__prod-popup__title-wrapper .js-store-prod-sku.js-product-sku").text();
 		if( sku != '' ){
