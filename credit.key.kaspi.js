@@ -7,8 +7,7 @@ $(document).ready(function() {
 		if( $('div').is('.t-store__prod-popup__btn-wrapper') ){
 			if( $('a').is('.whatsapp__com') ) $('.whatsapp__com').remove();
 			$(in_garbage).append('<a class="whatsapp__com" style="color:#fff" href="https://api.whatsapp.com/send/?phone=77017154775&text=Здравствуйте, хочу заказать '+location.href+'" target="_blank">Купить в Whatsapp</a>');
-			$(in_garbage).find('a').css({"display":"inline-flex", "box-sizing":"border-box", "vertical-align":"top"});
-			$('.whatsapp__com').css({"color":"#fff", "background":"#3BBF26", "color":"#fff;", "font-size":"33px", "margin-left":"4px", "border-radius":"4px", "padding":"6px"});
+			$('.whatsapp__com').css({"color":"#fff", "display":"block", "width":"232px", "text-align":"center", "background":"#3BBF26", "font-size":"19px", "margin":"0 0 7px 0", "border-radius":"4px", "padding":"11px 0"});
 			clearInterval(delInt5);
 		}
 		if( priDelInt5 == 100 ){ clearInterval(delInt5); }
