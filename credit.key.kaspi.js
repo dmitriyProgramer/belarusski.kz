@@ -21,6 +21,12 @@ $(document).ready(function() {
 			}
 		}
 	}, 1000);
+
+	if( $('div').is('.js-store-grid-cont.t-store__grid-cont.t-container.t-store__mobile-two-columns.t-store__grid-cont_mobile-grid') ){
+	    $('.js-store-grid-cont.t-store__grid-cont.t-container.t-store__mobile-two-columns.t-store__grid-cont_mobile-grid div').each(function(){
+	        $(this).find('a').attr('onclick', 'newSku()');
+	    })
+	}
 })
 
 newSku = function(){
@@ -29,7 +35,8 @@ newSku = function(){
 		sku = $(".t-store__prod-popup__title-wrapper .js-store-prod-sku.js-product-sku").text();
 		in_garbage = $('.t-store__prod-popup__btn-wrapper');
 		if( sku != '' && in_garbage.length ){
-			$(in_garbage).append('<div class="ks-widget" data-template="button" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000"></div>');
+			if( !$('div').is('.ks-widget') )
+				$(in_garbage).append('<div class="ks-widget" data-template="button" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000"></div>');
 			if( $('div').is('.ks-widget') ){
 				if( !$('script').is('#credit') ){
 					sc = '<script id="credit">(function(d, s, id) {';
