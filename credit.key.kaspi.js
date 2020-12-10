@@ -20,9 +20,7 @@ $(document).ready(function() {
 					sc+= 'kjs.parentNode.insertBefore(js, kjs);}(document, "script", "KS-Widget"));';
 					$('body').append(sc);
 					$('.t-store__prod-popup__title-wrapper').parent().find('select').attr('onchange', 'newSku()');
-					if( $('.ks-widget iframe').length ){ console.log('test');
-						$('.key__fon').css({"display":""});
-					}
+					display__key();
 					clearInterval(delInt1);
 				}
 			}
@@ -68,7 +66,7 @@ newSku = function(){
 					sc+= 'kjs.parentNode.insertBefore(js, kjs);}(document, "script", "KS-Widget"));';
 					$('body').append(sc);
 					$('.t-store__prod-popup__title-wrapper').parent().find('select').attr('onchange', 'newSku()');
-
+					display__key();
 					clearInterval(delInt2);
 				}
 			}
