@@ -3,7 +3,9 @@ $(document).ready(function() {
 		sku = $(".t-store__prod-popup__title-wrapper .js-store-prod-sku.js-product-sku").text();
 		in_garbage = $('.t-store__prod-popup__btn-wrapper');
 		if( sku != '' && in_garbage.length ){
-			$(in_garbage).append('<div class="ks-widget" data-template="button" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000"></div>');
+			$(in_garbage).append('<div class="key__fon"></div>');
+			$('.key__fon').css({"width":"160px", "height":"44px", "background":"#f14635", "background":"linear-gradient(#f76051 2%,#fb806d 5%,#f76051 5%,#f14635)", "border-radius":"4px"});
+			$('.key__fon').append('<div class="ks-widget" data-template="button" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000"></div>');
 			if( $('div').is('.ks-widget') ){
 				if( !$('script').is('#credit') ){
 					sc = '<script id="credit">(function(d, s, id) {';
@@ -42,8 +44,11 @@ newSku = function(){
 		sku = $(".t-store__prod-popup__title-wrapper .js-store-prod-sku.js-product-sku").text();
 		in_garbage = $('.t-store__prod-popup__btn-wrapper');
 		if( sku != '' && in_garbage.length ){
-			if( !$('div').is('.ks-widget') )
-				$(in_garbage).append('<div class="ks-widget" data-template="button" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000"></div>');
+			$(in_garbage).append('<div class="key__fon"></div>');
+			$('.key__fon').css({"width":"160px", "height":"44px", "background":"#f14635", "background":"linear-gradient(#f76051 2%,#fb806d 5%,#f76051 5%,#f14635)", "border-radius":"4px"});
+			if( !$('div').is('.ks-widget') ){
+				$('.key__fon').append('<div class="ks-widget" data-template="button" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000"></div>');
+			}
 			if( $('div').is('.ks-widget') ){
 				if( !$('script').is('#credit') ){
 					sc = '<script id="credit">(function(d, s, id) {';
