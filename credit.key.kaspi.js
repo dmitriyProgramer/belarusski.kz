@@ -50,7 +50,6 @@ $(document).ready(function() {
 		sku = $(".t-store__prod-popup__title-wrapper .js-store-prod-sku.js-product-sku").text();
 	    if( sku != $('.ks-widget').attr('data-merchant-sku') ){
 	        newSku();
-	        clearInterval(delInt4);
 	    }
 	},500);
 
