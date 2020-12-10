@@ -3,7 +3,7 @@ $(document).ready(function() {
 	window.delInt1 = setInterval(function(){
 		sku = $(".t-store__prod-popup__title-wrapper .js-store-prod-sku.js-product-sku").text();
 		if( sku != '' ){
-			if( !$('div').is('.ks-widget') ){
+			if( !$('script').is('#credit') ){
 				$('div[tt="В корзину"]').append('<div class="ks-widget" data-template="button" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000"></div>');
 				sc = '<script id="credit">(function(d, s, id) {';
 				sc+= 'var js, kjs;';
@@ -26,7 +26,7 @@ newSku = function(){
 	delInt2 = setInterval(function(){
 		sku = $(".t-store__prod-popup__title-wrapper .js-store-prod-sku.js-product-sku").text();
 		if( sku != '' ){
-			if( !$('div').is('.ks-widget') ){
+			if( !$('script').is('#credit') ){
 				$('div[tt="В корзину"]').append('<div class="ks-widget" data-template="button" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000"></div>');
 				sc = '<script id="credit">(function(d, s, id) {';
 				sc+= 'var js, kjs;';
