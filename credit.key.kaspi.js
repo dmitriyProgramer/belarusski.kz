@@ -58,7 +58,6 @@ $(document).ready(function() {
 	        url = 'https://api.whatsapp.com/send/?phone=77017154775&text=Здравствуйте, хочу заказать '+location.href
 	        $('.whatsapp__com').attr('href', url );
 	    }
-	    console.log(location.href);
 	},100)
 
 })
