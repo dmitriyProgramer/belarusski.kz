@@ -5,7 +5,7 @@ $(document).ready(function() {
 		if( sku != '' && in_garbage.length ){
 			if( !$('div').is('.key__fon') ){
 				$(in_garbage).append('<div class="key__fon"></div>');
-				$('.key__fon').css({"width":"160px", "height":"44px", "background":"#f14635", "background":"linear-gradient(#f76051 2%,#fb806d 5%,#f76051 5%,#f14635)", "border-radius":"4px"});
+				$('.key__fon').css({"display":"none", "width":"160px", "height":"44px", "background":"#f14635", "background":"linear-gradient(#f76051 2%,#fb806d 5%,#f76051 5%,#f14635)", "border-radius":"4px"});
 			}
 			$('.key__fon').append('<div class="ks-widget" data-template="button" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000"></div>');
 			if( $('div').is('.ks-widget') ){
@@ -20,6 +20,7 @@ $(document).ready(function() {
 					sc+= 'kjs.parentNode.insertBefore(js, kjs);}(document, "script", "KS-Widget"));';
 					$('body').append(sc);
 					$('.t-store__prod-popup__title-wrapper').parent().find('select').attr('onchange', 'newSku()');
+					$('.key__fon').css({"display",""});
 					clearInterval(delInt1);
 				}
 			}
@@ -48,7 +49,7 @@ newSku = function(){
 		if( sku != '' && in_garbage.length ){
 			if( !$('div').is('.key__fon') ){
 				$(in_garbage).append('<div class="key__fon"></div>');
-				$('.key__fon').css({"width":"160px", "height":"44px", "background":"#f14635", "background":"linear-gradient(#f76051 2%,#fb806d 5%,#f76051 5%,#f14635)", "border-radius":"4px"});
+				$('.key__fon').css({"display":"none", "width":"160px", "height":"44px", "background":"#f14635", "background":"linear-gradient(#f76051 2%,#fb806d 5%,#f76051 5%,#f14635)", "border-radius":"4px"});
 			}
 			if( !$('div').is('.ks-widget') ){
 				$('.key__fon').append('<div class="ks-widget" data-template="button" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000"></div>');
@@ -65,6 +66,7 @@ newSku = function(){
 					sc+= 'kjs.parentNode.insertBefore(js, kjs);}(document, "script", "KS-Widget"));';
 					$('body').append(sc);
 					$('.t-store__prod-popup__title-wrapper').parent().find('select').attr('onchange', 'newSku()');
+					$('.key__fon').css({"display",""});
 					clearInterval(delInt2);
 				}
 			}
