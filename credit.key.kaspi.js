@@ -22,11 +22,18 @@ $(document).ready(function() {
 		}
 	}, 1000);
 
-	if( $('div').is('.js-store-grid-cont.t-store__grid-cont.t-container.t-store__mobile-two-columns.t-store__grid-cont_mobile-grid') ){
-	    $('.js-store-grid-cont.t-store__grid-cont.t-container.t-store__mobile-two-columns.t-store__grid-cont_mobile-grid div').each(function(){
-	        $(this).find('a').attr('onclick', 'newSku()');
-	    })
-	}
+	window.priDelInt3 = 0;
+
+	window.delInt3 = setInterval(function(){
+		if( $('div').is('.js-store-grid-cont.t-store__grid-cont.t-container.t-store__mobile-two-columns.t-store__grid-cont_mobile-grid') ){
+		    $('.js-store-grid-cont.t-store__grid-cont.t-container.t-store__mobile-two-columns.t-store__grid-cont_mobile-grid div').each(function(){
+		        $(this).find('a').attr('onclick', 'newSku()');
+		    })
+		    clearInterval(delInt3);
+		}
+		if( priDelInt3 == 10 ){ clearInterval(delInt3); }
+		priDelInt3++;
+	}, 1000);
 })
 
 newSku = function(){
