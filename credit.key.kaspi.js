@@ -68,12 +68,23 @@ newSku = function(){
 					sc+= 'kjs.parentNode.insertBefore(js, kjs);}(document, "script", "KS-Widget"));';
 					$('body').append(sc);
 					$('.t-store__prod-popup__title-wrapper').parent().find('select').attr('onchange', 'newSku()');
-					if( $('.ks-widget iframe').length ){ console.log('test');
-						$('.key__fon').css({"display":""});
-					}
+
 					clearInterval(delInt2);
 				}
 			}
 		}
 	}, 1000);
+}
+
+window.priDelInt4 = 0;
+
+display__key = function(){
+	window.delInt4 = setInterval(function(){
+		if( $('.ks-widget iframe').length ){
+			$('.key__fon').css({"display":""});
+			clearInterval(delInt4);
+		}
+		if( priDelInt4 == 100 ){ clearInterval(delInt4); }
+		priDelInt4++;
+	}, 100);
 }
