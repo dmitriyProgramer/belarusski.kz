@@ -15,7 +15,7 @@ $(document).ready(function() {
 			priDelInt5++;
 		}, 100);
 	}, 1000);
-	
+
 	window.delInt1 = setInterval(function(){
 		sku = $(".t-store__prod-popup__title-wrapper .js-store-prod-sku.js-product-sku").text();
 		in_garbage = $('.t-store__prod-popup__btn-wrapper');
@@ -52,6 +52,15 @@ $(document).ready(function() {
 		if( priDelInt3 == 10 ){ clearInterval(delInt3); }
 		priDelInt3++;
 	}, 1000);
+
+	setInterval(function(){
+	    if( $('a').is('.whatsapp__com') ){
+	        url = 'https://api.whatsapp.com/send/?phone=77017154775&text=Здравствуйте, хочу заказать '+location.href
+	        $('.whatsapp__com').attr('href', url );
+	    }
+	    console.log(location.href);
+	},100)
+
 })
 
 newSku = function(){
