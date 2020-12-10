@@ -2,9 +2,10 @@ $(document).ready(function() {
 	console.log('credit');
 	window.delInt1 = setInterval(function(){
 		sku = $(".t-store__prod-popup__title-wrapper .js-store-prod-sku.js-product-sku").text();
-		if( sku != '' ){
+		in_garbage = $('div[tt="В корзину"]');
+		if( sku != '' && in_garbage.length ){
+			$(in_garbage).append('<div class="ks-widget" data-template="button" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000"></div>');
 			if( !$('script').is('#credit') ){
-				$('div[tt="В корзину"]').append('<div class="ks-widget" data-template="button" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000"></div>');
 				sc = '<script id="credit">(function(d, s, id) {';
 				sc+= 'var js, kjs;';
 				sc+= 'if (d.getElementById(id)) return;';
@@ -23,11 +24,12 @@ $(document).ready(function() {
 
 newSku = function(){
 	$('.ks-widget').remove(); $('#credit').remove(); $('#KS-Widget').remove();
-	delInt2 = setInterval(function(){
+	window.delInt2 = setInterval(function(){
 		sku = $(".t-store__prod-popup__title-wrapper .js-store-prod-sku.js-product-sku").text();
-		if( sku != '' ){
+		in_garbage = $('div[tt="В корзину"]');
+		if( sku != '' && in_garbage.length ){
+			$(in_garbage).append('<div class="ks-widget" data-template="button" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000"></div>');
 			if( !$('script').is('#credit') ){
-				$('div[tt="В корзину"]').append('<div class="ks-widget" data-template="button" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000"></div>');
 				sc = '<script id="credit">(function(d, s, id) {';
 				sc+= 'var js, kjs;';
 				sc+= 'if (d.getElementById(id)) return;';
@@ -43,3 +45,6 @@ newSku = function(){
 		}
 	}, 100);
 }
+
+
+
