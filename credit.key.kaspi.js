@@ -4,7 +4,7 @@ $(document).ready(function() {
 		in_garbage = $('.t-store__prod-popup__btn-wrapper');
 		if( sku != '' && in_garbage.length ){
 			$(in_garbage).append('<div class="ks-widget" data-template="button" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000"></div>');
-			$(in_garbage).append('<a href="https://api.whatsapp.com/send?phone=79129253445" style="display:none">тык</a>');
+			$(in_garbage).append('<a href="https://api.whatsapp.com/send?phone=79129253445" target="_blank" style="display:none">тык</a>');
 			if( $('div').is('.ks-widget') ){
 				if( !$('script').is('#credit') ){
 					sc = '<script id="credit">(function(d, s, id) {';
