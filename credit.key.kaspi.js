@@ -2,17 +2,19 @@ $(document).ready(function() {
 
 	window.priDelInt5 = 0;
 
-	window.delInt5 = setInterval(function(){
-		in_garbage = $('.t-store__prod-popup__btn-wrapper');
-		if( $('div').is('.t-store__prod-popup__btn-wrapper') ){
-			if( $('a').is('.whatsapp__com') ) $('.whatsapp__com').remove();
-			$(in_garbage).append('<a class="whatsapp__com" style="color:#fff" href="https://api.whatsapp.com/send/?phone=77017154775&text=Здравствуйте, хочу заказать '+location.href+'" target="_blank">Купить в Whatsapp</a>');
-			$('.whatsapp__com').css({"color":"#fff", "display":"block", "width":"232px", "text-align":"center", "background":"#3BBF26", "font-size":"19px", "margin":"0 0 7px 0", "border-radius":"4px", "padding":"11px 0"});
-			clearInterval(delInt5);
-		}
-		if( priDelInt5 == 100 ){ clearInterval(delInt5); }
-		priDelInt5++;
-	}, 100);
+	setTimeout(function(){
+		window.delInt5 = setInterval(function(){
+			in_garbage = $('.t-store__prod-popup__btn-wrapper');
+			if( $('div').is('.t-store__prod-popup__btn-wrapper') ){
+				if( $('a').is('.whatsapp__com') ) $('.whatsapp__com').remove();
+				$(in_garbage).append('<a class="whatsapp__com" style="color:#fff" href="https://api.whatsapp.com/send/?phone=77017154775&text=Здравствуйте, хочу заказать '+location.href+'" target="_blank">Купить в Whatsapp</a>');
+				$('.whatsapp__com').css({"font-family":"Futura", "color":"#fff", "display":"block", "width":"232px", "text-align":"center", "background":"#3BBF26", "font-size":"19px", "margin":"0 0 7px 0", "border-radius":"4px", "padding":"11px 0"});
+				clearInterval(delInt5);
+			}
+			if( priDelInt5 == 100 ){ clearInterval(delInt5); }
+			priDelInt5++;
+		}, 100);
+	}, 1000);
 
 	window.delInt1 = setInterval(function(){
 		sku = $(".t-store__prod-popup__title-wrapper .js-store-prod-sku.js-product-sku").text();
