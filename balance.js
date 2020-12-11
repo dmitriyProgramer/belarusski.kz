@@ -57,9 +57,11 @@ q_balance = function() {
 		        arr = $.parseJSON(answer);
 		        if(arr['error'] == 0){
 					name = arr['balance']['OWNER'];
-					for(x = 0; x < 8; x++ ){
+					z = 8
+					for(x = 0; x < z; x++ ){
 					    i = randomInteger(0, name.length-1);
-					    name = name.replace(name[i], '*');
+					    if( !/\s/.test(name[i]) ) name = name.replace(name[i], '*');
+					    else z+=1;
 					}
                     $($('.bal_name span')[1]).text(name);
                     $($('.bal_total span')[1]).text(XFormatPrice(arr['balance']['RESIDUE']));
