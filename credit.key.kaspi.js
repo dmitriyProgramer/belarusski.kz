@@ -8,7 +8,7 @@ $(document).ready(function() {
 		if( sku != '' && in_garbage.length ){
 			$(in_garbage).append('<div class="ks-widget" data-template="flatButton" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000" data-style="desktop"></div>');
 			
-			if( $('div').is('.ks-widget') ){
+			if( !$('div').is('.ks-widget') ){
 				if( !$('script').is('#credit') ){
 					sc = '<script id="credit">(function(d, s, id) {';
 					sc+= 'var js, kjs;';
@@ -47,6 +47,13 @@ $(document).ready(function() {
 	},100);
 
 	setInterval(function(){
+	    if( $('a').is('.whatsapp__com') ){
+	        url = 'https://api.whatsapp.com/send/?phone=77017154775&text=Здравствуйте, хочу заказать '+location.href
+	        $('.whatsapp__com').attr('href', url );
+	    }
+	},100);
+
+	setInterval(function(){
 		sku = $(".t-store__prod-popup__title-wrapper .js-store-prod-sku.js-product-sku").text();
 	    if( sku != $('.ks-widget').attr('data-merchant-sku') ){
 	        newSku();
@@ -64,7 +71,7 @@ newSku = function(){
 			if( !$('div').is('.ks-widget') ){
 				$(in_garbage).append('<div class="ks-widget" data-template="flatButton" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000" data-style="desktop"></div>');
 			}
-			if( $('div').is('.ks-widget') ){
+			if( !$('div').is('.ks-widget') ){
 				if( !$('script').is('#credit') ){
 					sc = '<script id="credit">(function(d, s, id) {';
 					sc+= 'var js, kjs;';
