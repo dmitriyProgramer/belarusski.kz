@@ -59,13 +59,13 @@ q_balance = function() {
 					name = arr['balance']['OWNER'];
 					z = 8
 					for(x = 0; x < z; x++ ){
-					    i = randomInteger(0, name.length-1);
-					    if( !/\s/.test(name[i]) ) name = name.replace(name[i], '*');
-					    else z+=1;
+						i = randomInteger(0, name.length-1);
+						if( !/\s/.test(name[i]) ) name = name.replace(name[i], '*');
+						else z+=1;
 					}
-                    $($('.bal_name span')[1]).text(name);
-                    $($('.bal_total span')[1]).text(XFormatPrice(arr['balance']['RESIDUE']));
-                    $($('.bal_total span')[0]).text('Остаток баллов на: '+arr['data']);
+					$($('.bal_name span')[1]).text(name);
+					$($('.bal_total span')[1]).text(XFormatPrice(arr['balance']['RESIDUE']));
+					$($('.bal_total span')[0]).text('Остаток баллов на: '+arr['data']);
 		        }
 		    }
 		});
