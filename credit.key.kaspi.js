@@ -6,7 +6,7 @@ $(document).ready(function() {
 		sku = $(".t-store__prod-popup__title-wrapper .js-store-prod-sku.js-product-sku").text();
 		in_garbage = $('.t-store__prod-popup__btn-wrapper');
 		if( sku != '' && in_garbage.length ){
-			$(in_garbage).append('<div class="ks-widget" data-template="button" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000" data-style="desktop"></div>');
+			$(in_garbage).append('<div class="ks-widget" data-template="flatButton" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000" data-style="desktop"></div>');
 			
 			if( $('div').is('.ks-widget') ){
 				if( !$('script').is('#credit') ){
@@ -62,7 +62,7 @@ newSku = function(){
 		in_garbage = $('.t-store__prod-popup__btn-wrapper');
 		if( sku != '' && in_garbage.length ){
 			if( !$('div').is('.ks-widget') ){
-				$(in_garbage).append('<div class="ks-widget" data-template="button" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000" data-style="desktop"></div>');
+				$(in_garbage).append('<div class="ks-widget" data-template="flatButton" data-merchant-sku="'+sku+'" data-merchant-code="Belarusskoe" data-city="750000000" data-style="desktop"></div>');
 			}
 			if( $('div').is('.ks-widget') ){
 				if( !$('script').is('#credit') ){
