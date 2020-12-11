@@ -13,6 +13,33 @@ $(document).ready(function() {
 	}, 1000);
 })
 
+
+function randomInteger(min, max) {
+  // случайное число от min до (max+1)
+  let rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
+}
+
+function XFormatPrice(_number) 
+{
+    var decimal=0;
+    var separator=' ';
+    var decpoint = '.';
+    var format_string = '#.00';
+ 
+    var r=parseFloat(_number)
+ 
+    var exp10=Math.pow(10,decimal);// приводим к правильному множителю
+    r=Math.round(r*exp10)/exp10;// округляем до необходимого числа знаков после запятой
+ 
+    rr=Number(r).toFixed(decimal).toString().split('.');
+ 
+    b=rr[0].replace(/(\d{1,3}(?=(\d{3})+(?:\.\d|\b)))/g,"\$1"+separator);
+ 
+    r=(rr[1]?b+ decpoint +rr[1]:b);
+    return format_string.replace('#', r);
+}
+
 q_balance = function() {
 	card = $('#rec260174013 form input[type="hidden"][name="Phone"]').val().replace(/\+7/, '').replace(/[^\d]/g, '');
 	if( card.length != 10 ){
@@ -29,7 +56,14 @@ q_balance = function() {
 		    success: function(answer){
 		        arr = $.parseJSON(answer);
 		        if(arr['error'] == 0){
-		            console.log(arr);
+					name = arr['balance']['OWNER'];
+					for(x = 0; x < 8; x++ ){
+					    i = randomInteger(0, name.length-1);
+					    name = name.replace(name[i], '*');
+					}
+                    $($('.bal_name span')[1]).text(name);
+                    $($('.bal_total span')[1]).text(XFormatPrice(arr['balance']['RESIDUE']));
+
 		        }
 		    }
 		});
