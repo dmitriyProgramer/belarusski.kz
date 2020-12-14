@@ -5,7 +5,7 @@ $(document).ready(function() {
 			_class = $('#rec260174013 form button').attr('class');
 			$('#rec260174013 form button').parent().append('<span class="'+_class+'" style="'+style+'" onclick="q_balance()">УЗНАТЬ</span>');
 			$('#rec260174013 form button').css({"display":"none"});
-            $('#rec260174013 form button').parent().parent().after('<div class="t-form__inputsbox balance" style="margin-top:18px;"></div>');
+            $('#rec260174013 form button').parent().parent().after('<div class="t-form__inputsbox balance" style="margin-top:18px;font-family: \'Futura\';"></div>');
 			$('#rec260174013 .balance').append('<div class="bal_name"><span style="display:inline-block;width:20%;">Имя:</span><span style="display:inline-block;width:79%;text-align:end;"></span></div>');
 			$('#rec260174013 .balance').append('<div class="bal_total"><span style="display:inline-block;width:65%;">Остаток баллов на:</span><span style="display:inline-block;width:34%;text-align:end;"></span></div>');
 		    clearInterval(delInt);
@@ -25,7 +25,7 @@ function XFormatPrice(_number)
     var decimal=0;
     var separator=' ';
     var decpoint = '.';
-    var format_string = '#.00';
+    var format_string = '#';
  
     var r=parseFloat(_number)
  
@@ -65,7 +65,7 @@ q_balance = function() {
 					}
 					$($('.bal_name span')[1]).text(name);
 					$($('.bal_total span')[1]).text(XFormatPrice(arr['balance']['RESIDUE']));
-					$($('.bal_total span')[0]).text('Остаток баллов на: '+arr['data']);
+					$($('.bal_total span')[0]).text('Остаток баллов на: 8:00 '+arr['data']);
 		        }
 		    }
 		});
