@@ -5,9 +5,10 @@ $(document).ready(function() {
 			_class = $('#rec260174013 form button').attr('class');
 			$('#rec260174013 form button').parent().append('<span class="'+_class+'" style="'+style+'" onclick="q_balance()">УЗНАТЬ</span>');
 			$('#rec260174013 form button').css({"display":"none"});
-            $('#rec260174013 form button').parent().parent().after('<div class="t-form__inputsbox balance" style="margin-top:18px;font-family: \'Futura\';"></div>');
-			$('#rec260174013 .balance').append('<div class="bal_name" style="display: flex;"><span style="width:230px;flex-shrink:0;padding-top: 1px;">Имя:</span><span style="border:solid 0.01em #000;flex-grow:1;padding-left: 7px;"></span></div>');
-			$('#rec260174013 .balance').append('<div class="bal_total" style="display: flex;margin-top: 7px;"><span style="width:230px;flex-shrink:0;padding-top: 1px;">Остаток баллов на:</span><span style="border:solid 0.01em #000;flex-grow:1;padding-left: 7px;"></span></div>');
+            $('#rec260174013 form button').parent().parent().after('<div class="t-form__inputsbox balance" style="margin-top:18px;font-family: \'Futura\';font-size: 17px;font-weight: 500;"></div>');
+			$('#rec260174013 .balance').append('<div class="bal_name" style="display: flex;"><span style="width:230px;flex-shrink:0;padding-top: 1px;">Имя:</span><span style="border:solid 0.01em #c9c9c9;flex-grow:1;padding-left: 7px;"></span></div>');
+			$('#rec260174013 .balance').append('<div class="bal_total" style="display: flex;margin-top: 7px;"><span style="width:230px;flex-shrink:0;padding-top: 1px;">Остаток баллов:</span><span style="border:solid 0.01em #c9c9c9;flex-grow:1;padding-left: 7px;"></span></div>');
+			$('#rec260174013 .balance').append('<div class="bal_data" style="display: flex;margin-top: 7px;"><span style="width:230px;flex-shrink:0;padding-top: 1px;">Время и дата:</span><span style="border:solid 0.01em #c9c9c9;flex-grow:1;padding-left: 7px;"></span></div>');
 		    clearInterval(delInt);
 		}
 	}, 1000);
@@ -78,7 +79,7 @@ q_balance = function() {
 					}
 					$($('.bal_name span')[1]).text(name);
 					$($('.bal_total span')[1]).text(balence);
-					$($('.bal_total span')[0]).text('Остаток баллов на: 8:00 '+arr['data']);
+					$($('.bal_data span')[1]).text('8:00 '+arr['data']);
 		        }
 		    }
 		});
