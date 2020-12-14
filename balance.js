@@ -6,8 +6,8 @@ $(document).ready(function() {
 			$('#rec260174013 form button').parent().append('<span class="'+_class+'" style="'+style+'" onclick="q_balance()">УЗНАТЬ</span>');
 			$('#rec260174013 form button').css({"display":"none"});
             $('#rec260174013 form button').parent().parent().after('<div class="t-form__inputsbox balance" style="margin-top:18px;font-family: \'Futura\';"></div>');
-			$('#rec260174013 .balance').append('<div class="bal_name"><span style="display:inline-block;width:241px;">Имя:</span><span style=""></span></div>');
-			$('#rec260174013 .balance').append('<div class="bal_total"><span style="display:inline-block;width:241px;">Остаток баллов на:</span><span style=""></span></div>');
+			$('#rec260174013 .balance').append('<div class="bal_name"><span style="display:inline-block;width:241px;">Имя:</span><span style="width:120px;display:inline-block;border-top:solid0.01em#000;border-left:solid0.01em#000;border-right:solid0.01em#000;padding:4px7px0;"></span></div>');
+			$('#rec260174013 .balance').append('<div class="bal_total"><span style="display:inline-block;width:241px;">Остаток баллов на:</span><span style="width:120px;display:inline-block;border-bottom:solid0.01em#000;border-left:solid0.01em#000;border-right:solid0.01em#000;padding:07px4px;"></span></div>');
 		    clearInterval(delInt);
 		}
 	}, 1000);
@@ -56,15 +56,22 @@ q_balance = function() {
 		    success: function(answer){
 		        arr = $.parseJSON(answer);
 		        if(arr['error'] == 0){
-					name = arr['balance']['OWNER'];
-					z = 8
-					for(x = 0; x < z; x++ ){
-						i = randomInteger(0, name.length-1);
-						if( !/\s/.test(name[i]) ) name = name.replace(name[i], '*');
-						else z+=1;
+		        	if( arr['balance']['OWNER'] != 0 ){
+						name = arr['balance']['OWNER'];
+						z = 8
+						for(x = 0; x < z; x++ ){
+							i = randomInteger(0, name.length-1);
+							if( !/\s/.test(name[i]) ) name = name.replace(name[i], '*');
+							else z+=1;
+						}
+						name = name.substr(1, 15);
+						balence = XFormatPrice(arr['balance']['RESIDUE']);
+					}else{
+						name = 'Не найдено';
+						balence = 'Не найдено';
 					}
-					$($('.bal_name span')[1]).text(name.substr(1, 15));
-					$($('.bal_total span')[1]).text(XFormatPrice(arr['balance']['RESIDUE']));
+					$($('.bal_name span')[1]).text(name);
+					$($('.bal_total span')[1]).text(balence);
 					$($('.bal_total span')[0]).text('Остаток баллов на: 8:00 '+arr['data']);
 		        }
 		    }
