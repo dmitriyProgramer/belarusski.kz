@@ -71,7 +71,7 @@ q_balance = function() {
 							if( !/\s/.test(name[i]) ) name = name.replace(name[i], '*');
 							else z+=1;
 						}
-						name = name.substr(1, 15);
+						name = name.substr(0, 14);
 						balence = XFormatPrice(arr['balance']['RESIDUE']);
 						dat = '8:00 '+arr['data'];
 					}else{
