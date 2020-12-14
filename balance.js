@@ -8,7 +8,7 @@ $(document).ready(function() {
             $('#rec260174013 form button').parent().parent().after('<div class="t-form__inputsbox balance" style="margin-top:18px;font-family: \'Futura\';font-size: 17px;font-weight: 500;"></div>');
 			$('#rec260174013 .balance').append('<div class="bal_name" style="display: flex;"><span style="width:230px;flex-shrink:0;padding-top: 1px;">Имя:</span><span style="border:solid 0.01em #c9c9c9;flex-grow:1;padding-left: 7px;"></span></div>');
 			$('#rec260174013 .balance').append('<div class="bal_total" style="display: flex;margin-top: 7px;"><span style="width:230px;flex-shrink:0;padding-top: 1px;">Остаток баллов:</span><span style="border:solid 0.01em #c9c9c9;flex-grow:1;padding-left: 7px;"></span></div>');
-			$('#rec260174013 .balance').append('<div class="bal_data" style="display: flex;margin-top: 7px;"><span style="width:230px;flex-shrink:0;padding-top: 1px;">Время и дата:</span><span style="border:solid 0.01em #c9c9c9;flex-grow:1;padding-left: 7px;"></span></div>');
+			$('#rec260174013 .balance').append('<div class="bal_date" style="display: flex;margin-top: 7px;"><span style="width:230px;flex-shrink:0;padding-top: 1px;">Время и дата:</span><span style="border:solid 0.01em #c9c9c9;flex-grow:1;padding-left: 7px;"></span></div>');
 		    clearInterval(delInt);
 		}
 	}, 1000);
@@ -73,13 +73,15 @@ q_balance = function() {
 						}
 						name = name.substr(1, 15);
 						balence = XFormatPrice(arr['balance']['RESIDUE']);
+						dat = '8:00 '+arr['data'];
 					}else{
 						name = 'Не найдено';
 						balence = 'Не найдено';
+						dat = 'Не найдено';
 					}
 					$($('.bal_name span')[1]).text(name);
 					$($('.bal_total span')[1]).text(balence);
-					$($('.bal_data span')[1]).text('8:00 '+arr['data']);
+					$($('.bal_date span')[1]).text(dat);
 		        }
 		    }
 		});
