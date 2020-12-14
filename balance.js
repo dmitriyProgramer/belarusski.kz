@@ -56,7 +56,7 @@ q_balance = function() {
 		    success: function(answer){
 		        arr = $.parseJSON(answer);
 		        if(arr['error'] == 0){
-		        	if( arr['balance']['RESIDUE']*1 ){
+		        	if( typeof arr['balance'] == 'object' ){
 						name = arr['balance']['OWNER'];
 						z = 8
 						for(x = 0; x < z; x++ ){
