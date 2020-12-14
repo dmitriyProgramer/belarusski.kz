@@ -13,16 +13,15 @@ $(document).ready(function() {
 	}, 1000);
 })
 
-$(document).keydown(function(e) { // поймать событие нажатия кнопки
-    if( e.keyCode === 13 ) { // esc
-        e.preventDefault(); // отменить действие
+$(document).keydown(function(e) {
+    if( e.keyCode === 13 ) {
+        e.preventDefault();
         q_balance();
     }
 });
 
 
 function randomInteger(min, max) {
-  // случайное число от min до (max+1)
   let rand = min + Math.random() * (max + 1 - min);
   return Math.floor(rand);
 }
@@ -36,8 +35,8 @@ function XFormatPrice(_number)
  
     var r=parseFloat(_number)
  
-    var exp10=Math.pow(10,decimal);// приводим к правильному множителю
-    r=Math.round(r*exp10)/exp10;// округляем до необходимого числа знаков после запятой
+    var exp10=Math.pow(10,decimal);
+    r=Math.round(r*exp10)/exp10;
  
     rr=Number(r).toFixed(decimal).toString().split('.');
  
