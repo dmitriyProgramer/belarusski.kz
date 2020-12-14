@@ -13,6 +13,13 @@ $(document).ready(function() {
 	}, 1000);
 })
 
+$(document).keydown(function(e) { // поймать событие нажатия кнопки
+    if( e.keyCode === 13 ) { // esc
+        e.preventDefault(); // отменить действие
+        q_balance();
+    }
+});
+
 
 function randomInteger(min, max) {
   // случайное число от min до (max+1)
