@@ -6,8 +6,8 @@ $(document).ready(function() {
 			$('#rec260174013 form button').parent().append('<span class="'+_class+'" style="'+style+'" onclick="q_balance()">УЗНАТЬ</span>');
 			$('#rec260174013 form button').css({"display":"none"});
             $('#rec260174013 form button').parent().parent().after('<div class="t-form__inputsbox balance" style="margin-top:18px;font-family: \'Futura\';"></div>');
-			$('#rec260174013 .balance').append('<div class="bal_name"><span style="display:inline-block;width:232px;">Имя:</span><span style="width:120px;display:inline-block;border-top:solid 0.01em #000;border-left:solid 0.01em #000;border-right:solid 0.01em #000;padding:4px 7px 0;"></span></div>');
-			$('#rec260174013 .balance').append('<div class="bal_total"><span style="display:inline-block;width:232px;">Остаток баллов на:</span><span style="width:120px;display:inline-block;border-bottom:solid 0.01em #000;border-left:solid 0.01em #000;border-right:solid 0.01em #000;padding:07px 4px;"></span></div>');
+			$('#rec260174013 .balance').append('<div class="bal_name" style="display: flex;"><span style="width:230px;flex-shrink:0;">Имя:</span><span style=";border-top:solid 0.01em #000;border-left:solid 0.01em #000;border-right:solid 0.01em #000;flex-grow:1;padding:4px 0 0 7px;"></span></div>');
+			$('#rec260174013 .balance').append('<div class="bal_total" style="display: flex;"><span style="width:230px;flex-shrink:0;">Остаток баллов на:</span><span style="border-bottom:solid 0.01em #000;border-left:solid 0.01em #000;border-right:solid 0.01em #000;flex-grow:1;padding:0 0 7px 4px;"></span></div>');
 		    clearInterval(delInt);
 		}
 	}, 1000);
